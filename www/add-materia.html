@@ -37,37 +37,24 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane ng-controller="DashCtrl">
+    <ion-pane ng-controller="AddMateriaCtrl">
       <div class="bar bar-header bar-royal">
         <h1 class="title">Assina pra mim</h1>
       </div>
       <ion-content>
 
-        <div id='card' class="list card" ng-repeat="materia in materias">
-
-          <div class="item item-calm">
-            <h2>{{materia.nome}} 
-              <a class="icon icon-right ion-close-round assertive" on-touch="rmMateria(materia)"></a>
-            </h2>
-            
-            <p>faltas: {{materia.faltas}}  
-              <a class="icon icon-right ion-minus-round assertive" on-touch="rmFalta(materia)"></a><br>
-              <span ng-show="materia.faltas == materia.max" class="energized"> ATENÇÃO <i class="icon ion-alert"></i> </span>
-              <span ng-show="materia.faltas > materia.max" class="assertive">JA ERA  <i class="icon ion-alert-circled"></i></span>
-            </p>
-
-          </div>
-
-           <a class="item item-icon-right assertive falta" on-touch="faltou(materia)" href="#">
-              Faltei!
-              <i class="icon ion-sad-outline"></i>
-            </a>
-          </div>
-          
-
+        <div class="list">
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Nome da Matéria</span>
+            <input ng-model="nome" type="text" placeholder="Nome da Matéria">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Máximo de faltas</span>
+            <input ng-model="max" type="text" placeholder="Máximo de faltas">
+          </label>
         </div>
 
-        <a class="button icon-right ion-plus-round button-royal add-materia" on-touch="addMateria()">Adicionar Matéria</a>
+        <a class="button icon-right ion-plus-round button-royal add-materia" on-touch="addMateria(nome,max)">Adicionar Matéria</a>
       </ion-content>
     </ion-pane>
   </body>

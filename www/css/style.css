@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+.card{
+	border-radius: 20px;
+	border: none;
+	box-shadow: none;
+}
+ion-content{
+	margin-top: 10% !important;
+}
+.item-icon-right{
+	text-align: right;
+}
+.add-materia{
+	float: right;
+}
